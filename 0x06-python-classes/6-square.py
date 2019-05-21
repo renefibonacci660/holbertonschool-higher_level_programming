@@ -43,5 +43,6 @@ class Square():
         if self.__size <= 0:
             print()
 
-        else: 
-            print (((((" " * self.__position[0]) + ("#" * self.__size) + '\n')) * self.__size),end="")
+        else:
+            print(((((" " * self.__position[0]) +
+                    ("#" * self.__size) + '\n')) * self.__size), end="")
