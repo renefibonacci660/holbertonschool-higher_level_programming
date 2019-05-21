@@ -11,7 +11,7 @@ def list_division(my_list_1, my_list_2, list_length):
                 print("out of range")
             elif (isinstance(error, TypeError)):
                 print("wrong type")
-                quotient_list.append(0)
+            quotient_list.append(0)
         finally:
             pass
     return quotient_list
