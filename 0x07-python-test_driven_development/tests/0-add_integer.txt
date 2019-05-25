@@ -1,0 +1,66 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Checking if both values are type float
+>>> add_integer(1.3, 5.0)
+6
+
+Checking if float and int add
+>>> add_integer(5.0, 4)
+9
+>>> add_integer(2, 8.1)
+11
+
+Checking if can add two ints
+>>> add_integer(3, 16)
+19
+
+Checking the type
+>>> type(add_integer(2.0, 1))
+<class 'int'>
+
+>>> type(add_integer(2.0, 1.0))
+<class 'int'>
+
+checking with a wrong values
+>>> add_integer(9, "A")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+>>> add_integer("A", 9)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(-2, -88)
+-90
+
+>>> add_integer(float('nan'), 3)
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
+
+>>> add_integer(float("inf"), 3)
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float("-inf"), 3)
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(1)
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+>>> add_integer(3)
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'b'
+
+>>> add_integer()
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
