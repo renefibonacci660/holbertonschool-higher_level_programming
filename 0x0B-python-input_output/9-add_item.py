@@ -14,7 +14,7 @@ def add_item(args="", filename=""):
     except:
         allArgs = []
 
-    for index in args:
+    for item in args:
         allArgs.append(item)
     save_to_json(allArgs, filename)
 
