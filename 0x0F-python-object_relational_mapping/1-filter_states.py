@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-    Lists all states from given database
+    Lists all states from given database starting with N
 '''
 import MySQLdb
 from sys import argv
