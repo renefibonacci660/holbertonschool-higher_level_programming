@@ -14,8 +14,8 @@ if __name__ == "__main__":
                                  user=argv[1], passwd=argv[2], db=argv[3])
     cursor = connection.cursor()
     cursor.execute("SELECT cities.id, cities.name, states.name"
-                   " FROM states LEFT JOIN cities"
-                   " ON states.id = cities.state_id"
+                   " FROM cities LEFT JOIN states"
+                   " ON cities.state_id = states.id"
                    " ORDER BY cities.id ASC")
     rows = cursor.fetchall()
 
