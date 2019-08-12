@@ -13,12 +13,11 @@ if __name__ == "__main__":
     passwd = sys.argv[2]
     db = sys.argv[3]
     engine = create_engine(connection.format(user, passwd, db),
-                           pool_pre_ping=True)
-
+                        pool_pre_ping=True)
     session = sessionmaker(bind=engine)
 
-    State_to_add = State(name="Louisiana")
-    session().add(State_to_add)
+    state_to_add = State(name="Louisiana")
+    session().add(state_to_add)
     session().commit()
     obj = session().query(State).filter_by(name="Louisiana").first()
     print(obj.id)
