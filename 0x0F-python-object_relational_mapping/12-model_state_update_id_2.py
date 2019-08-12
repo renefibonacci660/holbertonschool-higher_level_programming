@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-    changes the name of a State object from the database 
+    changes the name of a State object from the database
 '''
 import sys
 from model_state import Base, State
