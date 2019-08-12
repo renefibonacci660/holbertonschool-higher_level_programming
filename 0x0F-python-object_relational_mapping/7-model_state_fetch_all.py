@@ -12,11 +12,13 @@ if __name__ == "__main__":
     passwd = sys.argv[2]
     db = sys.argv[3]
     connection = 'mysql+mysqldb://{}:{}@localhost:3306/{}'
-    with create_engine(connection.format(user, passwd, db),
-                       pool_pre_ping=True) as engine:
+    engine = create_engine(connection.format(user, passwd, db),
+                       pool_pre_ping=True)
         Session = sessionmaker(bind=engine)
         session = Session()
         query = session.query(State).order_by(State.id).all()
 
         for item in query:
             print("{}: {}".format(item.id, item.name))
+    connection.close()
+
