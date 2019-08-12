@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-    Prints the first State object from the database
+    Prints the first State object from the database, Nothing if no State obj
 '''
 
 import sys
@@ -13,10 +13,12 @@ if __name__ == "__main__":
     passwd = sys.argv[2]
     db = sys.argv[3]
     connection = 'mysql+mysqldb://{}:{}@localhost:3306/{}'
-    eng = create_engine(connection.format(user, passwd, db),
+    engine = create_engine(connection.format(user, passwd, db),
                         pool_pre_ping=True)
 
-    item = sessionmaker(bind=eng).query(State).first()
+    session = sessionmaker(bind=engine)
+
+    item = session().query(State).first()
 
     if item is None:
         print("Nothing")
