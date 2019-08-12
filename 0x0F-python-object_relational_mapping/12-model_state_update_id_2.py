@@ -15,8 +15,8 @@ if __name__ == "__main__":
     db = sys.argv[3]
     engine = create_engine(connection.format(user, passwd, db),
                            pool_pre_ping=True)
-    session = sessionmaker(bind=engine)
-
-    query = session().query(State).filter_by(id=2).first()
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    query = session.query(State).filter_by(id=2).first()
     query.name = "New Mexico"
-    session().commit()
+    session.commit()
