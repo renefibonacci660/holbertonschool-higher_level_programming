@@ -6,9 +6,9 @@ import sys
 import requests
 
 if __name__ == "__main__":
-    searchItem = sys.argv[1]
-    url = "https://swapi.co/api/people" + "?search={}".format(searchItem)
-    response = requests.get(url)
+    searchItem = {"search": sys.argv[1]}
+    url = "https://swapi.co/api/people"
+    response = requests.get(url, params=searchItem)
     jsonResponse = response.json()
     print("Number of results: {}".format(jsonResponse["count"]))
     for result in jsonResponse["results"]:
