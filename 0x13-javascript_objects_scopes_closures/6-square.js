@@ -1,11 +1,11 @@
 #!/usr/bin/node
-// New Square class that inherits from Rectangle class
+// New Square class that inherits from Square class in another file
 // Added instance method that prints rectangle
 // Super in constructor allows inheritence of Rectangle constructor attr
 
-const Rectangle = require('./4-rectangle');
+const Sqr = require('./5-square');
 
-class Square extends Rectangle {
+class Square extends Sqr {
   constructor (size) {
     super(size, size);
   }
