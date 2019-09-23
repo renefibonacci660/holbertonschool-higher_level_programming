@@ -1,6 +1,7 @@
 #!/usr/bin/node
 // New Square class that inherits from Rectangle class
 // Added instance method that prints rectangle
+// Super in constructor allows inheritence of Rectangle constructor attr
 
 const Rectangle = require('./4-rectangle');
 
